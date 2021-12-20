@@ -1,6 +1,8 @@
 let row = 4;
 let col = 5;
 
+//too many for cycles isnt good
+
 const getTable = (row, col) => {
   let num = 0;
   let arr = new Array(row);
