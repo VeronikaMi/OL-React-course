@@ -27,3 +27,19 @@ const getTable = (row, col) => {
 }
 
 console.log(getTable(row, col));
+
+
+//solution 
+// const getTable = (row, col) => {
+//   let table = [];
+//   for(let Ri = 0; Ri < row; Ri++){
+//     let rowResult = [];
+//     for(let Ci = 0; Ci < col; Ci++){
+//       rowResult.push(row * (Ci + 1) - (Ci % 2 ? Ri:row - Ri - 1));
+//     }
+//     table.push(rowResult);
+//   }
+//   return table;
+// }
+
+// console.log(getTable(row, col));
