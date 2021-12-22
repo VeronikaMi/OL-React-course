@@ -21,10 +21,10 @@ function Car(make, model, year) {
     return this.owners.length;
   }
 
+  // return this.owners.map(owner=> {owner.fullName()}); აბრუნებდა ობიექტს და მჭირდებოდა სტრინგი
+  
   this.getOwnerNames = function(){
-    return this.owners.map(owner=>{
-      owner.fullName();
-    })
+    return this.owners.map(owner=>owner.fullName());
   }
 
   this.getFullInfo = function(){
