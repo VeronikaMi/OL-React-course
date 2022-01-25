@@ -26,11 +26,6 @@ input[type="text"]{
   margin-right: 20px;
 }
 
-.error-text{
-  font-size: 14px;
-  color: red;
-}
-
 ul{
   list-style: none;
 }

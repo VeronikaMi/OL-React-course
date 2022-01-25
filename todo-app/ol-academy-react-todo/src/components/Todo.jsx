@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Todo.css";
+import { Error } from "./Error";
+import { Task } from "./Task";
 
 export class Todo extends Component {
   constructor(props) {
@@ -158,9 +160,7 @@ export class Todo extends Component {
           />
           <button onClick={this.onClickHandle}>Add</button>
         </div>
-        <div className="error">
-          <p className="error-text"> {this.state.error} </p>
-        </div>
+        <Error error={this.state.error} />
         <div className="additianal-btns">
           <button className="btn-2" onClick={this.onDeleteAll}>
             Delete All
@@ -181,9 +181,7 @@ export class Todo extends Component {
                   value={this.state.editValue}
                   onChange={this.onEditHandle}
                 />
-                <div className="error">
-                  <p className="error-text"> {this.state.editError} </p>
-                </div>
+                <Error error={this.state.editError} />
                 <button onClick={this.onEditClick}>Edit</button>
                 <button
                   className="btn-2"
@@ -200,6 +198,7 @@ export class Todo extends Component {
           <ul>
             {this.state.tasks.map((task, index) => (
               <li key={"task" + index}>
+                {/* <Task task = {task} index = {index} /> */}
                 <div className={"task" + (task.isDone ? " done" : "")}>
                   <div className="left-text">
                     <input
