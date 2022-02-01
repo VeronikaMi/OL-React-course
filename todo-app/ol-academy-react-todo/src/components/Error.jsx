@@ -1,12 +1,10 @@
-import React, { Component } from "react";
-import "./Error.css";
+import React from "react";
+import "./Error.scss";
 
-export class Error extends Component {
-  render() {
-    return (
-      <div className="error">
-        <p className="error-text"> {this.props.error} </p>
-      </div>
-    );
-  }
+export function Error(props) {
+  return (
+    <div className="error">
+      <p className="error-text"> {props.error} </p>
+    </div>
+  );
 }

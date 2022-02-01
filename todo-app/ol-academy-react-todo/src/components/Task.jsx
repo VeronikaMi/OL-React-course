@@ -1,56 +1,56 @@
-import React, { Component } from "react";
-import "./Task.css";
+import React from "react";
+import "./Task.scss";
 
-export class Task extends Component {
-  render(){
-    return(
-      <div className={"task" + (this.props.task.isDone ? " done" : "")}>
-                  <div className="left-text">
-                    <input
-                      type="checkbox"
-                      defaultChecked={this.props.task.isDone}
-                      onChange={() => {
-                        this.onCheck(this.props.index);
-                      }}
-                    />
-                    <p className="text">{this.props.task.name}</p>
-                  </div>
+function Task(props) {
+  return (
+    <div className={props.task.isDone ? "task done" : "task"}>
+      <div className="left-text">
+        <input
+          type="checkbox"
+          defaultChecked={props.task.isDone}
+          onChange={() => {
+            props.onCheck(props.task.id);
+          }}
+        />
+        <p className="text">{props.task.name}</p>
+      </div>
 
-                  <div className="btn-container">
-                    <p
-                      className="button"
-                      onClick={() => {
-                        this.onEdit(this.props.index);
-                      }}
-                    >
-                      Edit
-                    </p>
-                    <p
-                      className="button delete"
-                      onClick={() => {
-                        this.onDeleteTask(this.props.index);
-                      }}
-                    >
-                      Delete
-                    </p>
-                    <p
-                      className="button arrow"
-                      onClick={() => {
-                        this.moveUp(this.props.index);
-                      }}
-                    >
-                      ↑
-                    </p>
-                    <p
-                      className="button arrow"
-                      onClick={() => {
-                        this.moveDown(this.props.index);
-                      }}
-                    >
-                      ↓
-                    </p>
-                  </div>
-                </div>
-    )
-  }
+      <div className="btn-container">
+        <p
+          className="button"
+          onClick={() => {
+            props.onEdit(props.task.id);
+          }}
+        >
+          Edit
+        </p>
+        <p
+          className="button delete"
+          onClick={() => {
+            props.onDeleteTask(props.task.id);
+          }}
+        >
+          Delete
+        </p>
+        <p
+          className="button arrow"
+          onClick={() => {
+            props.moveUp(props.task.id);
+          }}
+        >
+          ↑
+        </p>
+        <p
+          className="button arrow"
+          onClick={() => {
+            props.moveDown(props.task.id);
+          }}
+        >
+          ↓
+        </p>
+      </div>
+    </div>
+  );
 }
+
+export default Task;
